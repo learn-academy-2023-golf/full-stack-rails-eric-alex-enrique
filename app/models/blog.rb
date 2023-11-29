@@ -1,5 +1,4 @@
 class Blog < ApplicationRecord
-    validates :title, presence: true
-    validates :content, presence: 
-    true, length: { minimum:2 }
+    validates :title, presence: true, uniqueness: true, length: { minimum:4 }
+    validates :content, presence: true, uniqueness: true, length: { minimum:10 }
 end

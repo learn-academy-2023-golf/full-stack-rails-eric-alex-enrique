@@ -13,15 +13,9 @@ class BlogController < ApplicationController
 
     def create 
         @blog = Blog.create(blog_params)
-        if @blog.title != ''
            if @blog.valid?
-             redirect_to
-             root_path
+             redirect_to root_path
            end
-        end
-        if @blog.valid? 
-        redirect_to root_path
-        end
     end
 
     def destroy

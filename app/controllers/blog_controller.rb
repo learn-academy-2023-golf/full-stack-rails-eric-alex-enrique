@@ -13,12 +13,9 @@ class BlogController < ApplicationController
 
     def create 
         @blog = Blog.create(blog_params)
-        if @blog.title == ''
-            @blog.errors.add('title', 'can not be empty') 
-        end
-        if @blog.valid? 
-        redirect_to root_path
-        end
+           if @blog.valid?
+             redirect_to root_path
+           end
     end
 
     def destroy
